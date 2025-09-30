@@ -1,0 +1,46 @@
+INSTRUCCIONES DE CORREO Y CAMBIOS REALIZADOS
+============================================
+
+1. Comandos ejecutados:
+----------------------
+- php artisan make:mail WelcomeMail --markdown=emails.welcome
+- php artisan make:mail OrderReceiptMail --markdown=emails.order_receipt
+
+2. Cambios en el registro de usuarios:
+--------------------------------------
+- Se creó el Mailable WelcomeMail.
+- Se modificó el controlador de registro para enviar un correo de bienvenida al usuario tras registrarse.
+
+3. Cambios en el checkout (compra):
+-----------------------------------
+- Se creó el Mailable OrderReceiptMail.
+- Se dejó el código preparado para enviar un recibo de compra al usuario, pero está comentado/desactivado en el controlador CheckoutController.
+
+4. Cambios en las vistas de correo:
+-----------------------------------
+- resources/views/emails/welcome.blade.php: Mensaje simple de bienvenida.
+- resources/views/emails/order_receipt.blade.php: Mensaje simple de confirmación de compra.
+
+5. Configuración de correo en .env:
+-----------------------------------
+- Se configuró el envío de correos con Gmail (SMTP), pero está desactivado por defecto (MAIL_MAILER=log).
+- Para activar el envío real, descomenta las líneas de SMTP y pon tus credenciales de Gmail.
+
+6. ¿Cómo activar el recibo de compra?
+-------------------------------------
+- Ve a app/Http/Controllers/CheckoutController.php y descomenta la línea:
+  // Mail::to(Auth::user()->email)->send(new OrderReceiptMail());
+
+7. ¿Cómo activar el envío real de correos?
+------------------------------------------
+- Edita el archivo .env:
+  - Cambia MAIL_MAILER=log por MAIL_MAILER=smtp
+  - Descomenta y completa las líneas de configuración SMTP de Gmail.
+
+8. Notas:
+---------
+- Si usas Gmail con 2FA, necesitas una contraseña de aplicación.
+- El correo de bienvenida se envía automáticamente al registrarse.
+- El recibo de compra está listo pero desactivado.
+
+Cualquier duda, consulta el código o pide ayuda.

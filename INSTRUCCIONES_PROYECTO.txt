@@ -1,0 +1,39 @@
+INSTRUCCIONES DE USO - LIBRERÍA ECOMMERCE
+
+---
+FUNCIONALIDAD DEL CARRITO
+---
+1. Los usuarios pueden agregar libros al carrito desde el catálogo.
+2. El carrito se visualiza en la opción "Carrito" del menú.
+3. Se pueden modificar cantidades o eliminar productos desde el carrito.
+4. Para comprar, haz clic en "Proceder al pago" y completa el checkout.
+5. El stock se descuenta automáticamente al finalizar la compra.
+
+---
+ADMINISTRACIÓN (ADMIN)
+---
+Acceso: Solo usuarios con is_admin=1 pueden ver el menú de administración.
+Opciones principales:
+- Dashboard: Resumen de libros, categorías, usuarios y pedidos.
+- Libros: Listar, crear, editar, eliminar libros. Subida de imágenes y PDF.
+- Categorías: Listar, crear, editar, eliminar categorías.
+- Usuarios: Listado de usuarios registrados.
+- Pedidos: Listado y detalle de pedidos realizados por los usuarios.
+
+---
+PEDIDOS Y MÉTODOS DE PAGO
+---
+- Los usuarios pueden ver sus pedidos en "Mis pedidos".
+- Cada pedido muestra los libros comprados, cantidades y total.
+- Métodos de pago simulados: Tarjeta de crédito/débito, PayPal (no integrados con pasarela real).
+- El admin puede ver todos los pedidos desde el panel de administración.
+
+---
+NOTAS
+---
+- Para agregar libros, primero debes crear al menos una categoría.
+- Las imágenes de libros se guardan en public/images/books.
+- El menú de navegación se adapta según el rol del usuario.
+
+---
+Cualquier duda, consulta o mejora, revisa el código o contacta al desarrollador.
